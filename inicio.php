@@ -40,7 +40,7 @@ if ($resultado->num_rows === 1) {
 
 } else {
     // Si no existe → volver al login
-    header("Location: login.php?error=1");
+    header("Location: index.php?error=1");
     exit();
 }
 
