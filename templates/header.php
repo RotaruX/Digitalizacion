@@ -8,5 +8,6 @@
 </head>
 <body>
     <header>
-        <h1>Sistema de gestión de la seguridad laboral</h1><img src="./static/includes/logo.png" height="60px">
+        <section id="titulo"><h1>Sistema de gestión de la seguridad laboral</h1><img src="./static/includes/logo.png" height="60px"></section>
+        <ul><li>Link 1</li><li>Link 2</li><li>Link 3</li></ul>
     </header>

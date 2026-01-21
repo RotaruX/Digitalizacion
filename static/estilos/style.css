@@ -1,12 +1,69 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header{
+header {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    background-color: lightgray;
-    padding: 10px;
+    gap: 15px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 15px;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    cursor: pointer;
+}
+
+
+footer {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+}
+
+footer h4 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+footer p#fecha {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Efecto hover */
+footer p:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
