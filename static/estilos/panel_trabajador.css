@@ -1,0 +1,81 @@
+/* Título */
+.titulo-panel {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Leyenda */
+.leyenda {
+    width: 70%;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.leyenda ul {
+    list-style: none;
+    padding: 0;
+}
+
+.leyenda li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cuadro {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    margin-right: 10px;
+}
+
+/* Colores de la leyenda */
+.correcto {
+    background-color: #8fd19e;
+}
+
+.pronto {
+    background-color: #ffd93d;
+}
+
+.caducado {
+    background-color: #ff6b6b;
+}
+
+/* Tabla */
+.tabla-container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.tabla-epis {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+.tabla-epis th, .tabla-epis td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla-epis th {
+    background-color: #e6e6e6;
+}
+
+/* Colores aplicados a filas */
+.tabla-epis tr.correcto {
+    background-color: #8fd19e;
+}
+
+.tabla-epis tr.pronto {
+    background-color: #ffd93d;
+}
+
+.tabla-epis tr.caducado {
+    background-color: #ff6b6b;
+    color: white;
+}

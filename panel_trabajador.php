@@ -25,34 +25,27 @@ $stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $id_trabajador);
 $stmt->execute();
 $resultado = $stmt->get_result();
+
+// Incluir header
+include 'templates/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mis EPIs</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 60%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #eee;
-        }
-    </style>
-</head>
-<body>
+<h2 class="titulo-panel">
+    EPIs asignados a <?php echo htmlspecialchars($_SESSION['nombre_completo']); ?>
+</h2>
 
-<h2 style="text-align:center;">EPIs asignados a <?php echo $_SESSION['usuario']; ?></h2>
+<!-- LEYENDA -->
+<div class="leyenda">
+    <h3>Leyenda de estado de EPIs</h3>
+    <ul>
+        <li><span class="cuadro correcto"></span> <strong>Correcto:</strong> El EPI está en buen estado.</li>
+        <li><span class="cuadro pronto"></span> <strong>Próxima caducidad:</strong> Caduca en menos de 30 días.</li>
+        <li><span class="cuadro caducado"></span> <strong>Caducado:</strong> Debes solicitar una renovación.</li>
+    </ul>
+</div>
 
-<table>
+<div class="tabla-container">
+<table class="tabla-epis">
     <tr>
         <th>EPI</th>
         <th>Fecha de entrega</th>
@@ -60,7 +53,22 @@ $resultado = $stmt->get_result();
     </tr>
 
     <?php while ($fila = $resultado->fetch_assoc()): ?>
-        <tr>
+        <?php
+            // Cálculo de caducidad
+            $caduca = strtotime($fila['fecha_caducidad']);
+            $hoy = time();
+            $faltan = ($caduca - $hoy) / 86400;
+
+            if ($faltan < 0) {
+                $clase = "caducado";
+            } elseif ($faltan <= 30) {
+                $clase = "pronto";
+            } else {
+                $clase = "correcto";
+            }
+        ?>
+
+        <tr class="<?php echo $clase; ?>">
             <td><?php echo $fila['nombre_epi']; ?></td>
             <td><?php echo $fila['fecha_entrega']; ?></td>
             <td><?php echo $fila['fecha_caducidad']; ?></td>
@@ -68,10 +76,9 @@ $resultado = $stmt->get_result();
     <?php endwhile; ?>
 
 </table>
-
-</body>
-</html>
+</div>
 
 <?php
+include 'templates/footer.php';
 $conexion->close();
 ?>

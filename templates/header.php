@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control de EPI</title>
     <link rel="stylesheet" href="static/estilos/style.css">
+    <link rel="stylesheet" href="static/estilos/panel_trabajador.css">
 </head>
 <body>
     <header>

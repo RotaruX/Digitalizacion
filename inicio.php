@@ -29,6 +29,9 @@ if ($resultado->num_rows === 1) {
     $_SESSION['usuario'] = $datos['usuario'];
     $_SESSION['rol'] = $datos['rol'];
 
+    // 👉 AÑADE ESTA LÍNEA
+    $_SESSION['nombre_completo'] = $datos['nombre']; // nombre + apellidos en una sola columna
+
     // Redirigir según rol
     if ($datos['rol'] === "rrhh") {
         header("Location: panel_rrhh.php");
