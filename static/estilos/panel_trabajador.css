@@ -1,16 +1,33 @@
-/* Título */
+/* ============================
+   PANEL DEL TRABAJADOR
+   ============================ */
+
+/* Título principal */
 .titulo-panel {
     text-align: center;
     margin-top: 25px;
     font-size: 28px;
     font-weight: bold;
+    color: #333;
 }
 
-/* Leyenda */
+/* ============================
+   LEYENDA
+   ============================ */
+
 .leyenda {
     width: 70%;
     margin: 20px auto;
-    font-size: 18px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.leyenda h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #444;
 }
 
 .leyenda ul {
@@ -22,13 +39,15 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    font-size: 18px;
 }
 
 .cuadro {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border: 1px solid #333;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 /* Colores de la leyenda */
@@ -44,7 +63,10 @@
     background-color: #ff6b6b;
 }
 
-/* Tabla */
+/* ============================
+   TABLA DE EPIS
+   ============================ */
+
 .tabla-container {
     width: 80%;
     margin: 30px auto;
@@ -54,19 +76,25 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 18px;
-}
-
-.tabla-epis th, .tabla-epis td {
-    border: 1px solid #333;
-    padding: 12px;
-    text-align: center;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .tabla-epis th {
     background-color: #e6e6e6;
+    padding: 12px;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
 }
 
-/* Colores aplicados a filas */
+.tabla-epis td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Colores aplicados a filas según estado */
 .tabla-epis tr.correcto {
     background-color: #8fd19e;
 }
@@ -79,3 +107,70 @@
     background-color: #ff6b6b;
     color: white;
 }
+
+/* Hover para mejorar la experiencia */
+.tabla-epis tr:hover {
+    filter: brightness(0.95);
+    transition: 0.2s;
+}
+
+/* ============================
+   BOTONES GENERALES
+   ============================ */
+
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin: 5px;
+}
+
+/* Quitar borde azul feo al hacer click */
+.btn:focus {
+    outline: none;
+}
+
+/* Botón Añadir EPIs */
+.btn-anadir {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-anadir:hover {
+    background-color: #1e7e34;
+}
+
+/* Botón Modificar */
+.btn-modificar {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-modificar:hover {
+    background-color: #d39e00;
+}
+
+/* Botón Borrar */
+.btn-borrar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-borrar:hover {
+    background-color: #a71d2a;
+}
+
+/* Botón Ver (si lo usas en RRHH) */
+.btn-ver {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-ver:hover {
+    background-color: #0056b3;
+}
+

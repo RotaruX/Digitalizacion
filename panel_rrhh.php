@@ -3,11 +3,11 @@ session_start();
 
 // Solo RRHH puede entrar
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== "rrhh") {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
-$conexion = new mysqli("localhost", "root", "", "eiffage");
+$conexion = new mysqli("localhost", "root", "", "controlempresas");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
@@ -34,10 +34,7 @@ include 'templates/header.php';
                 <td><?php echo $fila['nombre']; ?></td>
                 <td><?php echo $fila['usuario']; ?></td>
                 <td>
-                    <a href="ver_trabajador.php?id=<?php echo $fila['id_trabajador']; ?>" class="btn btn-ver">
-                        Ver EPIs
-                    </a>
-
+                    <a href="ver_trabajador.php?id=<?php echo $fila['id_trabajador']; ?>"><button class="btn btn-ver">Ver EPIs</button></a>
                 </td>
             </tr>
         <?php endwhile; ?>
