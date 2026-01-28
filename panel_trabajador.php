@@ -3,7 +3,7 @@ session_start();
 
 // Si no hay sesión, volver al login
 if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 

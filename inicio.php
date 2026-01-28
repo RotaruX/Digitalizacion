@@ -2,7 +2,7 @@
 session_start();
 
 // Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "control_empresa");
+$conexion = new mysqli("localhost", "root", "", "controlempresas");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
