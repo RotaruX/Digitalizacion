@@ -7,7 +7,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== "rrhh") {
     exit();
 }
 
-$conexion = new mysqli("localhost", "root", "", "eiffage");
+$conexion = new mysqli("localhost", "root", "", "controlempresas");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
