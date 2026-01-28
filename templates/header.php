@@ -10,5 +10,18 @@
 <body>
     <header>
         <section id="titulo"><h1>Sistema de gestión de la seguridad laboral</h1><img src="./static/includes/logo.png" height="60px"></section>
-        <ul><li>Link 1</li><li>Link 2</li><li>Link 3</li></ul>
+<ul>
+    <li><a href="../Digitalizacion/index.php"
+           class="<?= basename($_SERVER['PHP_SELF']) === 'index.php' ? 'active' : '' ?>">
+           Inicio</a></li>
+
+    <li><a href="../Digitalizacion/panel_epis.php"
+           class="<?= basename($_SERVER['PHP_SELF']) === 'panel_epis.php' ? 'active' : '' ?>">
+           EPI's</a></li>
+
+    <li><a href="../Digitalizacion/panel_trabajador.php"
+           class="<?= basename($_SERVER['PHP_SELF']) === 'panel_trabajador.php' ? 'active' : '' ?>">
+           Trabajador</a></li>
+</ul>
+
     </header>

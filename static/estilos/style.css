@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,6 +30,50 @@ ul {
 
 ul li {
     cursor: pointer;
+}
+
+/* Estilo base */
+header ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+/* Línea blanca fija para la página activa */
+header ul li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transition: all 0.25s ease;
+}
+
+/* Hover: texto crece y se vuelve dorado */
+header ul li a:hover {
+    color: #f7d774; /* dorado suave */
+    transform: scale(1.08);
+}
+
+/* Hover: la línea también crece y se vuelve dorada */
+header ul li a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f7d774;
+    transform: scaleX(1.1); /* crece un poco más que el texto */
+    transition: all 0.25s ease;
+}
+
+/* Evitar que el enlace activo crezca al pasar el ratón */
+header ul li a.active:hover {
+    transform: none;
 }
 
 
