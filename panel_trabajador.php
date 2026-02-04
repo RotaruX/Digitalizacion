@@ -27,9 +27,9 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 
 // Incluir header
-include 'templates/header.php';
+include 'templates/header-trabajador.php';
 ?>
-
+<main>
 <h2 class="titulo-panel">
     EPIs asignados a <?php echo htmlspecialchars($_SESSION['nombre_completo']); ?>
 </h2>
@@ -77,7 +77,7 @@ include 'templates/header.php';
 
 </table>
 </div>
-
+    </main>
 <?php
 include 'templates/footer.php';
 $conexion->close();

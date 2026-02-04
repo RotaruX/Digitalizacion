@@ -1,0 +1,107 @@
+/* Reset básico */
+
+
+/* Título */
+main h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Buscador y filtros */
+#buscador,
+#filtroTrabajador,
+#filtroCaducidad {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#buscador {
+    width: 250px;
+}
+
+#buscador:focus,
+#filtroTrabajador:focus,
+#filtroCaducidad:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Cabecera */
+thead {
+    background: #4a90e2;
+    color: #ffffff;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Filas */
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+/* Hover filas */
+tbody tr:hover {
+    background: #f5f8fc;
+}
+
+/* Botones de acciones */
+button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Botón editar */
+button:first-child {
+    background: #f5a623;
+    color: #fff;
+}
+
+button:first-child:hover {
+    background: #d4881f;
+}
+
+/* Botón eliminar */
+button:last-child {
+    background: #d0021b;
+    color: #fff;
+}
+
+button:last-child:hover {
+    background: #a80014;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #buscador,
+    #filtroTrabajador,
+    #filtroCaducidad {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
