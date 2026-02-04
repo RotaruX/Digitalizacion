@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$dbname = 'control_empresa';
+$dbname = 'controlempresas';
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {

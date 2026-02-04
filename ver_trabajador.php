@@ -13,7 +13,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$conexion = new mysqli("localhost", "root", "", "eiffage");
+$conexion = new mysqli("localhost", "root", "", "controlempresas");
 
 $sqlTrab = "SELECT nombre FROM trabajador WHERE id_trabajador = ?";
 $stmt = $conexion->prepare($sqlTrab);
