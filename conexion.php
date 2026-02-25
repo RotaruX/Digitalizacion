@@ -1,8 +1,14 @@
 <?php
-// Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "controlempresas");
+
+$host = "localhost";
+$user = "miusuario";
+$pass = "password_seguro";
+$db   = "controlempresas";
+
+$conexion = new mysqli($host, $user, $pass, $db);
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
+
 ?>
