@@ -1,21 +1,27 @@
 <?php
+
+$host = "localhost";
+$user = "miusuario";
+$pass = "password_seguro";
+$db   = "controlempresas";
+
 // Conexión al servidor MySQL (sin seleccionar base de datos)
-$conexion = new mysqli("localhost", "root", "");
+$conexion = new mysqli($host, $user, $pass);
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
 // Crear la base de datos
-$sql = "CREATE DATABASE IF NOT EXISTS controlempresas DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci";
+$sql = "CREATE DATABASE IF NOT EXISTS `$db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci";
 if ($conexion->query($sql) === TRUE) {
-    echo "✅ Base de datos 'controlempresas' creada correctamente.<br>";
+    echo "✅ Base de datos '$db' creada correctamente.<br>";
 } else {
     die("❌ Error al crear la base de datos: " . $conexion->error);
 }
 
 // Seleccionar la base de datos
-$conexion->select_db("controlempresas");
+$conexion->select_db($db);
 
 // ---- TABLA: trabajador ----
 $sqlTrabajador = "CREATE TABLE IF NOT EXISTS `trabajador` (
