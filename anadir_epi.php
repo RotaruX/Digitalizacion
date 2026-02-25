@@ -16,10 +16,7 @@ if (!isset($_GET['id_trabajador'])) {
 $id_trabajador = intval($_GET['id_trabajador']);
 
 // Conexión BD
-$conexion = new mysqli("localhost", "root", "", "controlempresas");
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+include 'conexion.php';
 
 // Obtener nombre del trabajador
 $sql = "SELECT nombre FROM trabajador WHERE id_trabajador = ?";

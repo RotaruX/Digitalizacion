@@ -7,11 +7,8 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== "rrhh") {
     exit();
 }
 
-$conexion = new mysqli("localhost", "root", "", "controlempresas");
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+// Conexión a la base de datos
+include 'conexion.php';
 
 $sql = "SELECT id_trabajador, nombre, usuario FROM trabajador";
 $resultado = $conexion->query($sql);

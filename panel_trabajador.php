@@ -10,11 +10,7 @@ if (!isset($_SESSION['id'])) {
 $id_trabajador = $_SESSION['id'];
 
 // Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "controlempresas");
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+include 'conexion.php';
 
 // Consulta de EPIs del trabajador
 $sql = "SELECT nombre_epi, fecha_entrega, fecha_caducidad 
